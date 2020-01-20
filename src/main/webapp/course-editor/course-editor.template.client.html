@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course editor page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/client.css">
+    <link rel="stylesheet" href="course-editor.style.client.css">
+</head>
+<body>
+    <div class="form-group row" style="background-color:gray">
+        <i class="fas fa-bars fa-2x fa-inverse col-sm-1"></i>
+        <p class="col-sm-4" style="font-size:25px; color:white">
+            CS5610-WebDev</p>
+        <ul class="nav nav-tabs col-sm-6">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Build</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Pages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Theme</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Apps</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+            </li>
+        </ul>
+        <span class="fa-stack fa-1x wd-bottom-right col-sm-1" style="color:red">
+          <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+        </span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3" style="background-color:grey">
+            <div class="list-group" style="background-color:grey">
+                <a href="#" class="list-group-item">Module 1 - jQuery
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i>
+                </a>
+                <a href="#" class="list-group-item active">Module 2 - React
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i>
+                </a>
+                <a href="#" class="list-group-item">Module 3 - Redux
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i>
+                </a>
+                <a href="#" class="list-group-item">Module 4 - Native
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i></a>
+                <a href="#" class="list-group-item">Module 5 - Angular
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i></a>
+                <a href="#" class="list-group-item">Module 6 - Node
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i></a>
+                <a href="#" class="list-group-item">Module 7 - Mongo
+                    <i class="fa fa-times" aria-hidden="true" ; style="position:absolute; right:10px"></i></a>
+                <span class="fa-stack fa-1x wd-bottom-right">
+              <i class="fas fa-plus fa-stack-1x fa-inverse" style="position:absolute; right:10px"></i>
+            </span>
+            </div>
+        </div>
+        <div class="col-8">
+            <ul class="nav nav-pills" ; style="background-color:grey; font-size:25px">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Topic 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Topic 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Topic 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Topic 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="font-size:25px; color:white">+
+                    </a>
+                </li>
+            </ul>
+            <div class="row"; style="height:38px;right:10px; position:absolute;">
+                <button class="btn btn-primary wbdv-button wbdv-login btn-success"
+                        style="width:60px; left:0px;padding:0px 0px;">Save</button>
+                <!-- Rounded switch -->
+                &nbsp;
+                <a> Preview</a>
+                &nbsp;
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
