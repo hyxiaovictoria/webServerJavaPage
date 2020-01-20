@@ -17,13 +17,17 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 button {
   background-color: blue;
-  height: 24px;
+  height: 8px;
   color: white;
   padding: 7px 10px;
   margin: 4px 0;
   border: none;
   cursor: pointer;
   width: 360px;
+}
+
+.wbdv-button{
+  height : 38px
 }
 
 /* Add a hover effect for buttons */
@@ -70,4 +74,14 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
+}
+
+.left{
+  position:relative;
+  float:left;
+}
+
+.right{
+  position:relative;
+  float:right;
 }
