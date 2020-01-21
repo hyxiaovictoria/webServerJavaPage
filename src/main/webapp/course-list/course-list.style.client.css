@@ -1,0 +1,31 @@
+.wbdv-label{
+  font-size : 25px;
+  color : white;
+}
+
+.wbdv-add-course{
+  color : red;
+}
+
+.wbdv-new-course{
+  color : black;
+  background-color: #6495ED
+}
+
+.wbdv-header{
+  font-size : 25px;
+  color : grey;
+}
+
+.wbdv-icon{
+  color : royalblue;
+}
+
+.wbdv-title{
+  color : black;
+}
+
+.fa-user-friends{
+  font-size : 18px;
+  color : grey;
+}
