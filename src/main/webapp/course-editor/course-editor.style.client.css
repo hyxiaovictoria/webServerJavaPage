@@ -102,3 +102,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.form-short{
+  width: 100px;
+  height: 24px;
+}
