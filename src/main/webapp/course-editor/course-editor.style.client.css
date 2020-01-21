@@ -4,4 +4,14 @@ h4{
 
 .wbdv-page-tab{
   color : white
+
+}
+
+.wbdv-module-item{
+  background-color : dimgray;
+}
+
+.fa-right{
+  position : absolute;
+  right : 10px
 }
