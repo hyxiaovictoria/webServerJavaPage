@@ -22,3 +22,19 @@ h6{
   bottom : 15px;
   color : white;
 }
+
+wbdv-module-list {
+    background-color: cyan;
+}
+
+.wbdv-module{
+    background-color: lightgray;
+}
+
+.wbdv-bold {
+    font-weight: bolder;
+}
+
+.wbdv-module-item.wbdv-selected {
+    background-color: royalblue;
+}
