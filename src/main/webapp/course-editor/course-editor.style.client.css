@@ -23,10 +23,14 @@ h6{
   color : white;
 }
 
-wbdv-module-list {
-    background-color: cyan;
+.wbdv-module-list{
+    margin : 20px;
+    background-color : cyan;
 }
 
+.with-margin{
+    margin : 20px
+}
 .wbdv-module{
     background-color: lightgray;
 }
