@@ -1,4 +1,6 @@
 (function () {
+    let userService = new AdminUserServiceClient();
+
     let usernameFld = $("#usernameFld").val();
     let passwordFld = $("#passwordFld");
     let firstNameFld = $("#firstNameFld");
@@ -60,6 +62,7 @@
 
     createBtn.mouseup(createUser);
     function main() {
+        userService.findAllUsers();
         renderUsers();
     }
     $(main)
