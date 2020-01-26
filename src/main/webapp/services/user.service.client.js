@@ -9,7 +9,8 @@ function AdminUserServiceClient() {
     function createUser(user) {}
     function findAllUsers() {
         // fetch(self.url);
-        fetch(self.url).then(response => response.json()).then(users=>console.log(users));
+        //fetch(self.url).then(response => response.json()).then(users=>console.log(users));
+        return fetch(self.url).then(response => response.json());
     }
     function findUserById(userId) {}
     function updateUser(userId, user) {}

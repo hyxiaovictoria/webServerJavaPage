@@ -57,13 +57,19 @@
             lastName : $("#lastNameFld").val(),
             role : $("#roleFld").val()};
         users.push(newUser);
-        renderUsers(users);
+        //renderUsers(users);
     }
 
     createBtn.mouseup(createUser);
     function main() {
-        userService.findAllUsers();
-        renderUsers();
+        //userService.findAllUsers().then(theusers=>console.log(theusers));
+        userService
+            .findAllUsers()
+            .then(theusers=>{
+                users=theusers;
+                //renderUsers()
+            });
+        //renderUsers();
     }
     $(main)
 })()
