@@ -5,14 +5,18 @@
     <title>Course Manager</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../style/client.css">
+    <!--link rel="stylesheet" href="../style/client.css"-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="user-admin.style.client.css">
-
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <h1>User Admin</h1>
-<table class="table">
+
+<table id="userTableFld1" class="table">
     <thead>
     <tr>
         <th>Username</th>
@@ -35,30 +39,22 @@
             <option value="FACULTY">Faculty</option>
             <option value="STUDENT">Student</option>
             <option value="ADMIN">Admin</option>
-            </select>
+        </select>
         </td>
         <td><span class="float-right" style="white-space: nowrap">
-            <i class="fa-2x fa fa-search wbdv-search"></i>
+            <button id="searchBtn">
+                <i class="fa-2x fa fa-search wbdv-search"></i>
+            </button>
+            <button id="createBtn">
             <i class="fa-2x fa fa-plus wbdv-create"></i>
+            </button>
+            <button id="updateBtn">
             <i class="fa-2x fa fa-check wbdv-update"></i>
+            </button>
             </span>
         </td>
     </tr>
-    <tbody class="wbdv-tbody">
-    <tr class="wbdv-template wbdv-user wbdv-hidden">
-        <td class="wbdv-username">ada</td>
-        <td>&nbsp;</td>
-        <td class="wbdv-first-name">Ada</td>
-        <td class="wbdv-last-name">Lovelace</td>
-        <td class="wbdv-role">FACULTY</td>
-        <td class="wbdv-actions">
-            <span class="float-right">
-                <i id="wbdv-remove" class="fa-2x fa fa-times wbdv-remove"></i>
-                <i id="wbdv-edit" class="fa-2x fa fa-pencil-alt wbdv-edit"></i>
-            </span>
-        </td>
-    </tr>
-    </tbody>
 </table>
 </body>
+<script src="user-admin.controller.client.js"></script>
 </html>
