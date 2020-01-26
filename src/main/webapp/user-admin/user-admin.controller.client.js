@@ -1,9 +1,9 @@
-let usernameFld = $("#usernameFld");
+let usernameFld = $("#usernameFld").val();
 let passwordFld = $("#passwordFld");
 let firstNameFld = $("#firstNameFld");
 let lastNameFld = $("#lastNameFld");
 let roleFld = $("#roleFld");
-let userTableFld = $("#userTableFld1");
+let userTableFld = $("#userTableFld");
 let createBtn = $("#createBtn");
 
 let users = [];
@@ -47,5 +47,14 @@ function renderUsers() {
     userTableFld.append(table);
 }
 
-createBtn.mousedown(function(){alert("Hello")});
+function createUser(){
+    let newUser={username : $("#usernameFld").val(),
+                password : $("#passwordFld").val(),
+                firstName : $("#firstNameFld").val(),
+                lastName : $("#lastNameFld").val(),
+                role : $("#roleFld").val()};
+    users.push(newUser);
+    renderUsers(users);
+}
+createBtn.mouseup(createUser);
 renderUsers();
