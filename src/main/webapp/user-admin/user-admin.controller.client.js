@@ -8,6 +8,8 @@
     let roleFld = $("#roleFld");
     let userTableFld = $("#userTableFld");
     let createBtn = $("#createBtn");
+    let removeBtn = $("#removeBtn");
+    let editBtn = $("#editBtn");
 
     let users = [];
     let user1={username : "admin", password : "admin123",firstName : "Admin", lastName : "NEU", role : "ADMIN"};
@@ -16,6 +18,16 @@
     users.push(user1)
     users.push(user2)
     users.push(user3)
+
+    function deleteUser(index) {
+        let user = users[index];
+        let userId = user._id;
+
+        userService.deleteUser(userId)
+            .then(response => {users.splice(index, 1);
+            renderUsers()
+            })
+    }
 
     function renderUsers() {
         var table = "";
@@ -38,8 +50,12 @@
 
             col = "<td class=\"wbdv-actions\">"
             col += "<span class=\"float-right\">"
+            col += "<button id=\"removeBtn\">";
             col += "<i id=\"wbdv-remove\" class=\"fa-2x fa fa-times wbdv-remove\"></i>"
+            col += "</button>";
+            col += "<button id=\"editBtn\">";
             col += "<i id=\"wbdv-edit\" class=\"fa-2x fa fa-pencil-alt wbdv-edit\"></i>"
+            col += "</button>";
             col += "</span></td>"
             row += col;
 
@@ -56,18 +72,27 @@
             firstName : $("#firstNameFld").val(),
             lastName : $("#lastNameFld").val(),
             role : $("#roleFld").val()};
-        users.push(newUser);
-        //renderUsers(users);
+
+
+        userService.createUser(newUser).then (actualUser => {
+            console.log(actualUser);
+            users.push(actualUser);
+            renderUsers();
+        })
     }
 
-    createBtn.mouseup(createUser);
+    //removeBtn.mouseup(deleteUser);
+    //editBtn.click(deleteUser(0));
     function main() {
         //userService.findAllUsers().then(theusers=>console.log(theusers));
+        //removeBtn.mouseup(deleteUser(0));
+        createBtn.click(createUser);
+
         userService
             .findAllUsers()
             .then(theusers=>{
                 users=theusers;
-                //renderUsers()
+                renderUsers();
             });
         //renderUsers();
     }
