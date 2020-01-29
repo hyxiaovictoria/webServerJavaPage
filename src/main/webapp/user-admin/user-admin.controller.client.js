@@ -19,53 +19,6 @@
     // users.push(user2)
     // users.push(user3)
 
-
-    function renderUsers(users) {
-        users = userService.findAllUsers()
-        console.log("Before rendering")
-        console.log(JSON.stringify(users))
-        // $userTableFld.children().remove();
-//        $("#userTableBodyFld").children().remove();
-        for (let i = 0; i < users.length; i++) {
-            let user = users[i];
-            let row = "<tr>";
-            let col = "<td>" + users[i].username + "</td>";
-            row += col;
-
-            col = "<td></td>";
-            row += col;
-
-            col = "<td>" + users[i].firstName + "</td>";
-            row += col;
-
-            col = "<td>" + users[i].lastName + "</td>";
-            row += col;
-
-            col = "<td>" + users[i].role + "</td>";
-            row += col;
-
-            $userTableFld.append(row);
-
-            let $td = $("<td class=\"wbdv-actions\">");
-            let $span = $("<span class=\"float-right\">")
-
-            let $delBtn = $("<button id=\"removeBtn\">"
-                         + "<i id=\"wbdv-remove\" class=\"fa-2x fa fa-times wbdv-remove\"></i>"
-                         + "</button>");
-            $delBtn.click(() => deleteUser(user))
-            $span.append($delBtn);
-
-            let $editBtn = $("<button id=\"editBtn\">"
-                        + "<i id=\"wbdv-edit\" class=\"fa-2x fa fa-pencil-alt wbdv-edit\"></i>"
-                        + "</button>");
-            //console.log("About to call editUser" + JSON.stringify(user))
-            $editBtn.click(() => editUser(user))
-            $span.append($editBtn);
-            $td.append($span);
-            $userTableFld.append($td);
-        }
-    }
-
     function createUser(){
         let newUser={username : $("#usernameFld").val(),
             password : $("#passwordFld").val(),
