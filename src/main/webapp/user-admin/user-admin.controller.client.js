@@ -92,8 +92,8 @@
                     col = "<td>" + users[i].role + "</td>";
                     row += col;
 
-                    //$userTableFld.append(row);
-                    console.log(row)
+                    $userTableFld.append(row);
+                    // console.log(row)
 
                     let $td = $("<td class=\"wbdv-actions\">");
                     let $span = $("<span class=\"float-right\">")
@@ -112,15 +112,15 @@
                     $span.append($editBtn);
                     $td.append($span);
                     //$td = "<td>X</td>"
-                    console.log("td[0] = " + $td[0].innerHTML)
-                    good = "<td>" + $td[0].innerHTML + "</td></tr>"
-                    console.log("good = " + good)
-                    $userTableFld.append(row + good);
+                    // console.log("td[0] = " + $td[0].innerHTML)
+                    // good = "<td>" + $td[0].innerHTML + "</td></tr>"
+                    // console.log("good = " + good)
+                    $userTableFld.append($td);
                     //$userTableFld.append("<tr><td>hannanhu</td><td></td><td>Hannah</td><td>Hu</td><td>STUDENT</td><td>X</td></tr>")
                     //$userTableFld.append("<tr><td>hannanhu</td><td></td><td>Hannah</td><td>Hu</td><td>STUDENT</td>")
                     //$userTableFld.append("<td>X</td></tr>")
                     //$userTableFld.last().after("<td>X</td></tr>")
-                    console.log($td)
+                    // console.log($td)
                 }
             });
     }
