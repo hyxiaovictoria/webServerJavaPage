@@ -12,13 +12,7 @@
     let $updateBtn = $("#updateBtn");
     let id_to_update
 
-    var users = []
-    // let user1={username : "admin", password : "admin123",firstName : "Admin", lastName : "NEU", role : "ADMIN", _id : "1"};
-    // let user2={username : "hxiao", password : "hello123",firstName : "Haiyan", lastName : "Xiao", role : "FACULTY", _id : "2"};
-    // let user3={username : "alanhu", password : "alan123",firstName : "Alan", lastName : "Hu", role : "STUDENT", _id : "3"};
-    // users.push(user1)
-    // users.push(user2)
-    // users.push(user3)
+    let users = []
 
     function createUser(){
         let newUser={username : $("#usernameFld").val(),
@@ -78,15 +72,14 @@
         $roleFld.val(user.role)
     }
 
-    function renderAllUsers() {
-        console.log("Start renderAllUsers()...")
+    function renderUsers() {
+        console.log("Start rendering all users...")
         userService
             .findAllUsers()
             .then(theusers=>{
                 users=theusers;
                 console.log("Fetched all users are: ")
                 console.log(JSON.stringify(users))
-                //renderUsers(users);
 
                 for (let i = 0; i < users.length; i++) {
                     let user = users[i];
@@ -120,7 +113,7 @@
                     let $editBtn = $("<button id=\"editBtn\">"
                         + "<i id=\"wbdv-edit\" class=\"fa-2x fa fa-pencil-alt wbdv-edit\"></i>"
                         + "</button>");
-                    //console.log("About to call editUser" + JSON.stringify(user))
+
                     $editBtn.click(() => editUser(user))
                     $span.append($editBtn);
                     $td.append($span);
@@ -129,25 +122,11 @@
             });
     }
 
-    //removeBtn.mouseup(deleteUser);
-    //editBtn.click(deleteUser(0));
     function main() {
-        //userService.findAllUsers().then(theusers=>console.log(theusers));
-        //removeBtn.mouseup(deleteUser(0));
         $createBtn.click(createUser);
         $updateBtn.click(updateUser);
 
-        renderAllUsers()
-        //
-        // userService
-        //     .findAllUsers()
-        //     .then(theusers=>{
-        //         users=theusers;
-        //         console.log(users)
-        //         renderUsers();
-        //     });
-        // console.log("Start render")
-        // renderUsers();
+        renderUsers()
     }
     $(main)
 })()
