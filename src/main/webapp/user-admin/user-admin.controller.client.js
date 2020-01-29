@@ -29,6 +29,20 @@
         })
     }
 
+    function findAllUsers() {
+        return userService.findAllUsers()
+    }
+
+    function deleteUser(user) {
+        console.log("Deleted a user: " + JSON.stringify(user));
+        let id = user._id;
+
+        userService.deleteUser(id)
+            .then(response => {users.splice(id, 1);
+                location.reload(true)
+            })
+    }
+
     function updateUser(user) {
         console.log("Update a user before: " + JSON.stringify(user));
         const updatedUser = {
@@ -52,30 +66,9 @@
             })
     }
 
-    function deleteUser(user) {
-        console.log("Deleted a user: " + JSON.stringify(user));
-        let id = user._id;
-
-        userService.deleteUser(id)
-            .then(response => {users.splice(id, 1);
-                location.reload(true)
-            })
-    }
-
-    function editUser(user) {
-        id_to_update = user._id
-        console.log("Edit a user: " + JSON.stringify(user))
-        $usernameFld.val(user.username)
-        $passwordFld.val(user.password)
-        $firstNameFld.val(user.firstName)
-        $lastNameFld.val(user.lastName)
-        $roleFld.val(user.role)
-    }
-
     function renderUsers() {
         console.log("Start rendering all users...")
-        userService
-            .findAllUsers()
+        findAllUsers()
             .then(theusers=>{
                 users=theusers;
                 console.log("Fetched all users are: ")
@@ -122,11 +115,22 @@
             });
     }
 
+    function editUser(user) {
+        id_to_update = user._id
+        console.log("Edit a user: " + JSON.stringify(user))
+        $usernameFld.val(user.username)
+        $passwordFld.val(user.password)
+        $firstNameFld.val(user.firstName)
+        $lastNameFld.val(user.lastName)
+        $roleFld.val(user.role)
+    }
+
     function main() {
         $createBtn.click(createUser);
         $updateBtn.click(updateUser);
 
         renderUsers()
     }
+    
     $(main)
 })()
