@@ -10,6 +10,7 @@
     let $createBtn = $("#createBtn");
     let $searchBtn = $("#searchBtn");
     let $updateBtn = $("#updateBtn");
+    let id_to_update
 
     var users = []
     // let user1={username : "admin", password : "admin123",firstName : "Admin", lastName : "NEU", role : "ADMIN", _id : "1"};
@@ -35,24 +36,25 @@
     }
 
     function updateUser(user) {
+        console.log("Update a user before: " + JSON.stringify(user));
         const updatedUser = {
-            username: $userTableFld.val(),
+            username: $usernameFld.val(),
             password: $passwordFld.val(),
             firstName: $firstNameFld.val(),
             lastName: $lastNameFld.val(),
             role: $roleFld.val()
         }
+        console.log("Update a user: " + JSON.stringify(updatedUser));
 
-        // $userTableFld.val("")
-        // $passwordFld.val("")
-        // $firstNameFld.val("")
-        // $lastNameFld.val("")
-        // $roleFld.val("")
+        $userTableFld.val("")
+        $passwordFld.val("")
+        $firstNameFld.val("")
+        $lastNameFld.val("")
+        $roleFld.val("")
 
-        userService.updateUser(user._id, updatedUser)
+        userService.updateUser(id_to_update, updatedUser)
             .then(branchNewUser => {
-                users.push(branchNewUser)
-                renderUsers()
+                location.reload(true)
             })
     }
 
@@ -67,11 +69,13 @@
     }
 
     function editUser(user) {
+        id_to_update = user._id
         console.log("Edit a user: " + JSON.stringify(user))
-        console.log("username fld before: " + $usernameFld.val())
         $usernameFld.val(user.username)
-        console.log("username fld after: " + $usernameFld.val())
-        //console.log(_id)
+        $passwordFld.val(user.password)
+        $firstNameFld.val(user.firstName)
+        $lastNameFld.val(user.lastName)
+        $roleFld.val(user.role)
     }
 
     function renderAllUsers() {
@@ -131,7 +135,7 @@
         //userService.findAllUsers().then(theusers=>console.log(theusers));
         //removeBtn.mouseup(deleteUser(0));
         $createBtn.click(createUser);
-        // $updateBtn.click(updateUser);
+        $updateBtn.click(updateUser);
 
         renderAllUsers()
         //

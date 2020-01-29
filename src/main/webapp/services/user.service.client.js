@@ -17,16 +17,6 @@ function AdminUserServiceClient() {
     function findAllUsers() {
         return fetch(self.url)
             .then(response => response.json())
-        // console.log(self.url)
-        // users = fetch(self.url, {method: 'GET'})
-        // console.log(JSON.stringify(users))
-        // // fetch(self.url);
-        // return fetch(self.url, {method: 'GET'}).then(response => response.json())
-        // .then(
-        //     users=>console.log(users)
-        // );
-        // console.log("findAllUsers() service is called and return value is " + JSON.stringify(allUsers))
-        // return allUsers
     }
 
     function findUserById(userId) {
@@ -35,7 +25,7 @@ function AdminUserServiceClient() {
     }
 
     function updateUser(userId, user) {
-        return fetch('${self.url}/${userId}', {
+        return fetch(`${self.url}/${userId}`, {
             method: 'PUT',
             body: JSON.stringify(user),
             headers: {
