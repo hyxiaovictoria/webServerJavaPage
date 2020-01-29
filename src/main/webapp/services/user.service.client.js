@@ -15,9 +15,18 @@ function AdminUserServiceClient() {
     }
 
     function findAllUsers() {
-        // fetch(self.url);
-        //fetch(self.url).then(response => response.json()).then(users=>console.log(users));
-        return fetch(self.url).then(response => response.json());
+        return fetch(self.url)
+            .then(response => response.json())
+        // console.log(self.url)
+        // users = fetch(self.url, {method: 'GET'})
+        // console.log(JSON.stringify(users))
+        // // fetch(self.url);
+        // return fetch(self.url, {method: 'GET'}).then(response => response.json())
+        // .then(
+        //     users=>console.log(users)
+        // );
+        // console.log("findAllUsers() service is called and return value is " + JSON.stringify(allUsers))
+        // return allUsers
     }
 
     function findUserById(userId) {
