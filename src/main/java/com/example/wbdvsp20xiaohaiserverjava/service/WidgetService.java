@@ -2,6 +2,7 @@ package com.example.wbdvsp20xiaohaiserverjava.service;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import com.example.wbdvsp20xiaohaiserverjava.models.Widget;
 import com.example.wbdvsp20xiaohaiserverjava.service.WidgetService;
@@ -59,5 +60,22 @@ public class WidgetService {
         }
 
         return results;
+    }
+
+    public int deleteWidget(String wid) {
+        listWidgets = listWidgets.stream()
+                .filter(w -> !w.getId().equals(wid)).collect(Collectors.toList());
+        return 1;
+    }
+
+    public int updateWidget(String wid, Widget updatedWidget) {
+        for (Widget widget : listWidgets) {
+            if (widget.getId().equals(wid)) {
+                widget = updatedWidget;
+                return 1;
+            }
+        }
+
+        return 0;
     }
 }
