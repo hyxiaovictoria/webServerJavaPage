@@ -35,5 +35,16 @@ public class WidgetController {
         return service.createWidget(newWidget);
     }
 
+    @DeleteMapping("/widgets/{widgetId}")
+    public int deleteWidget(
+            @PathVariable("widgetId") String wid) {
+        return service.deleteWidget(wid);
+    }
 
+    @PutMapping("/widgets/{widgetId}")
+    public int updateWidget(
+            @PathVariable("widgetId") String wid,
+            @RequestBody Widget widget) {
+        return service.updateWidget(wid, widget);
+    }
 }

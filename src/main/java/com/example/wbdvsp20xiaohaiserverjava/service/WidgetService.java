@@ -69,9 +69,9 @@ public class WidgetService {
     }
 
     public int updateWidget(String wid, Widget updatedWidget) {
-        for (Widget widget : listWidgets) {
-            if (widget.getId().equals(wid)) {
-                widget = updatedWidget;
+        for (int i = 0; i < listWidgets.size(); i++) {
+            if (listWidgets.get(i).getId().equals(wid)) {
+                listWidgets.set(i, updatedWidget);
                 return 1;
             }
         }
