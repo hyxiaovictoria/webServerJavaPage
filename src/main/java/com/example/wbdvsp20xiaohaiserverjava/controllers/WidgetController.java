@@ -2,10 +2,7 @@ package com.example.wbdvsp20xiaohaiserverjava.controllers;
 
 import com.example.wbdvsp20xiaohaiserverjava.service.WidgetService;
 import com.example.wbdvsp20xiaohaiserverjava.models.Widget;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -21,7 +18,22 @@ public class WidgetController {
     }
 
     @GetMapping("/widget/{widgetId}")
-    public Widget findWidgetById(@PathVariable("widgetId") String wid) {
+    public Widget findWidgetById(
+            @PathVariable("widgetId") String wid) {
         return service.findWidgetById(wid);
     }
+
+    @GetMapping("/topics/{topicId}/widgets")
+    public List<Widget> findWidgetsForTopic(
+            @PathVariable("topicId") String tid) {
+        return service.findWidgetsForTopic(tid);
+    }
+
+    @PostMapping("/widgets")
+    public Widget createWidget(
+            @RequestBody Widget newWidget) {
+        return service.createWidget(newWidget);
+    }
+
+
 }
