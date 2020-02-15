@@ -30,4 +30,34 @@ public class WidgetService {
         listWidgets.add(w4);
         listWidgets.add(w5);
     }
+
+    public Widget createWidget(Widget widget) {
+        listWidgets.add(widget);
+        return widget;
+    }
+
+    public Widget findWidgetById(String wid) {
+        for (Widget widget : listWidgets) {
+            if (widget.getId().equals(wid)) {
+                return widget;
+            }
+        }
+
+        return null;
+    }
+
+    public List<Widget> findAllWidgets() {
+        return listWidgets;
+    }
+
+    public List<Widget> findWidgetsForTopic(String topicId) {
+        List<Widget> results = new ArrayList<>();
+        for (Widget widget : listWidgets) {
+            if (widget.getTopicId().equals(topicId)) {
+                results.add(widget);
+            }
+        }
+
+        return results;
+    }
 }
