@@ -1,5 +1,6 @@
 package com.example.wbdvsp20xiaohaiserverjava.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -12,11 +13,11 @@ public class WidgetService {
     List<Widget> listWidgets = new ArrayList<>();
 
     public WidgetService() {
-        Widget w1 = new Widget("123", "WA", "HEADING");
-        Widget w2 = new Widget("234", "WB", "PARAGRAPH");
-        Widget w3 = new Widget("345", "WC", "HEADING");
-        Widget w4 = new Widget("456", "WD", "PARAGRAPH");
-        Widget w5 = new Widget("567", "WE", "HEADING");
+        Widget w1 = new Widget(String.valueOf(new Date().getTime()), "WA", "HEADING");
+        Widget w2 = new Widget(String.valueOf(new Date().getTime()+1), "WB", "PARAGRAPH");
+        Widget w3 = new Widget(String.valueOf(new Date().getTime()+2), "WC", "HEADING");
+        Widget w4 = new Widget(String.valueOf(new Date().getTime()+3), "WD", "PARAGRAPH");
+        Widget w5 = new Widget(String.valueOf(new Date().getTime()+4), "WE", "HEADING");
 
         w1.setTopicId("111");
         w2.setTopicId("111");
@@ -54,7 +55,7 @@ public class WidgetService {
     public List<Widget> findWidgetsForTopic(String topicId) {
         List<Widget> results = new ArrayList<>();
         for (Widget widget : listWidgets) {
-            if (widget.getTopicId().equals(topicId)) {
+            if (widget.getTopicId() != null && widget.getTopicId().equals(topicId)) {
                 results.add(widget);
             }
         }
