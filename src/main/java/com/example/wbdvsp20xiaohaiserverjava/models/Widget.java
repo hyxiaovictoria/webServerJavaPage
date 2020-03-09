@@ -1,6 +1,11 @@
 package com.example.wbdvsp20xiaohaiserverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Widget {
+    @Id
     private String id;
     private String title;
     private String type;
