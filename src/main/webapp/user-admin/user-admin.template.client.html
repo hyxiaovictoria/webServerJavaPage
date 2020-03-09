@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Manager</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="../style/client.css"-->
+    <link rel="stylesheet" href="user-admin.style.client.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="user-admin.style.client.css">
+</head>
+<body>
+<h1>User Admin</h1>
+
+<table id="userTableFld" class="table">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr class="wbdv-form">
+        <td><input id="usernameFld" class="form-control"
+                   placeholder="Username" /></td>
+        <td><input id="passwordFld" class="form-control"
+                   placeholder="Password" /></td>
+        <td><input id="firstNameFld" class="form-control"
+                   placeholder="First Name" /></td>
+        <td><input id="lastNameFld" class="form-control"
+                   placeholder="Last Name" /></td>
+        <td><select id="roleFld" class="form-control">
+            <option value="FACULTY">Faculty</option>
+            <option value="STUDENT">Student</option>
+            <option value="ADMIN">Admin</option>
+        </select>
+        </td>
+        <td><span class="float-right" style="white-space: nowrap">
+            <button id="searchBtn">
+                <i class="fa-2x fa fa-search wbdv-search"></i>
+            </button>
+            <button id="createBtn">
+            <i class="fa-2x fa fa-plus wbdv-create"></i>
+            </button>
+            <button id="updateBtn">
+            <i class="fa-2x fa fa-check wbdv-update"></i>
+            </button>
+            </span>
+        </td>
+    </tr>
+    </thead>
+    <script src="../services/user.service.client.js"></script>
+    <script src="user-admin.controller.client.js"></script>
+</table>
+</body>
+</html>
